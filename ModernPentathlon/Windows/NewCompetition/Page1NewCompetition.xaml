@@ -6,11 +6,9 @@
       xmlns:local="clr-namespace:ModernPentathlon.Windows.NewCompetition"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="Page1NewCompetition">
+      Title="Page1NewCompetition" KeepAlive="True">
 
     <Grid x:Name="Page1Grid">
-        <Button x:Name="NextButton" Content="Dalej" HorizontalAlignment="Left" Margin="204,258,0,0" VerticalAlignment="Top" Width="75" Click="NextButton_Click"/>
-        <Button x:Name="CancelButton" Content="Anuluj" HorizontalAlignment="Left" Margin="38,258,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
         <Label x:Name="label" Content="Uzupełnij poniższe pola aby rozpocząć" HorizontalAlignment="Left" Margin="48,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Nazwa zawodów:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="Data zawodów:" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
@@ -24,6 +22,9 @@
             <ComboBoxItem Content="Trójbój nowoczesny"/>
             <ComboBoxItem Content="Trójbój stary"/>
         </ComboBox>
+        <Button x:Name="NextButton" Content="Dalej" Margin="0,0,30,20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="NextButton_Click"/>
+        <Button x:Name="CancelButton" Content="Anuluj" HorizontalAlignment="Right" Margin="0,0,220
+                ,20" VerticalAlignment="Bottom" Width="75"/>
 
     </Grid>
 </Page>

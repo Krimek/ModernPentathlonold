@@ -56,9 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Code\Player.cs" />
-    <Compile Include="Windows\NewCompetition\DefaultPageNewCompetition.xaml.cs">
-      <DependentUpon>DefaultPageNewCompetition.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\NewCompetition\NewCompetition.xaml.cs">
       <DependentUpon>NewCompetition.xaml</DependentUpon>
     </Compile>
@@ -83,10 +80,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\NewCompetition\DefaultPageNewCompetition.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Windows\NewCompetition\NewCompetition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
