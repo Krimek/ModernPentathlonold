@@ -18,7 +18,7 @@ namespace ModernPentathlon.Windows.NewCompetition
     /// <summary>
     /// Interaction logic for Page3NewCompetition.xaml
     /// </summary>
-    public partial class Page3NewCompetition : Page
+    public partial class Page3NewCompetition : DefaultPageNewCompetition
     {
         public Page3NewCompetition()
         {

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernPentathlon.Windows.NewCompetition"
         mc:Ignorable="d"
-        Title="Nowe Zawody" Height="300" Width="300" ResizeMode="NoResize">
+        Title="Nowe Zawody" Height="477.331" Width="438.559" ResizeMode="NoResize">
     <Grid>
         <Frame x:Name="newCompetitionFrame" NavigationUIVisibility="Hidden"/>
 

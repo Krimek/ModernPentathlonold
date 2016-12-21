@@ -18,17 +18,22 @@ namespace ModernPentathlon.Windows.NewCompetition
     /// <summary>
     /// Interaction logic for Page1NewCompetition.xaml
     /// </summary>
-    public partial class Page1NewCompetition : Page
+    public partial class Page1NewCompetition : DefaultPageNewCompetition
     {
         public Page1NewCompetition()
         {
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void NextButton_Click(object sender, RoutedEventArgs e)
         {
             Page2NewCompetition p2 = new Page2NewCompetition();
             NavigationService.Navigate(p2);
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
