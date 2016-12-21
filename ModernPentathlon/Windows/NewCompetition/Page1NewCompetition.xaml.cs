@@ -10,20 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ModernPentathlon.Windows.NewCompetition
 {
     /// <summary>
-    /// Interaction logic for NewCompetition.xaml
+    /// Interaction logic for Page1NewCompetition.xaml
     /// </summary>
-    public partial class NewCompetition : Window
+    public partial class Page1NewCompetition : Page
     {
-        public NewCompetition()
+        public Page1NewCompetition()
         {
             InitializeComponent();
-            Page1NewCompetition p1 = new Page1NewCompetition();
-            newCompetitionFrame.NavigationService.Navigate(p1);
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Page2NewCompetition p2 = new Page2NewCompetition();
+            NavigationService.Navigate(p2);
         }
     }
 }

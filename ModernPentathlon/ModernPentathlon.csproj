@@ -55,11 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Windows\NewCompetition\FirstPageNewCompetition.xaml.cs">
-      <DependentUpon>FirstPageNewCompetition.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Code\Player.cs" />
     <Compile Include="Windows\NewCompetition\NewCompetition.xaml.cs">
       <DependentUpon>NewCompetition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewCompetition\Page1NewCompetition.xaml.cs">
+      <DependentUpon>Page1NewCompetition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewCompetition\Page2NewCompetition.xaml.cs">
+      <DependentUpon>Page2NewCompetition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NewCompetition\Page3NewCompetition.xaml.cs">
+      <DependentUpon>Page3NewCompetition.xaml</DependentUpon>
     </Compile>
     <Page Include="Windows\MainWindow\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -73,11 +80,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\NewCompetition\FirstPageNewCompetition.xaml">
+    <Page Include="Windows\NewCompetition\NewCompetition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\NewCompetition\NewCompetition.xaml">
+    <Page Include="Windows\NewCompetition\Page1NewCompetition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\NewCompetition\Page2NewCompetition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\NewCompetition\Page3NewCompetition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

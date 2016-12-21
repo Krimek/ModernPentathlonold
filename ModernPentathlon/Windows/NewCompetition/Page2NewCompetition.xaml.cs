@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ModernPentathlon.Windows.NewCompetition
 {
     /// <summary>
-    /// Interaction logic for FirstPageNewCompetition.xaml
+    /// Interaction logic for Page2NewCompetition.xaml
     /// </summary>
-    public partial class FirstPageNewCompetition : Page
+    public partial class Page2NewCompetition : Page
     {
-        public FirstPageNewCompetition()
+        public Page2NewCompetition()
         {
             InitializeComponent();
         }
