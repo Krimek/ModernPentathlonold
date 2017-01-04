@@ -14,6 +14,7 @@ namespace ModernPentathlon.Code
         DateTime dateBirth;
         enum Sex { K, M};
         string club;
+
         public int Id
         {
             get
@@ -72,7 +73,8 @@ namespace ModernPentathlon.Code
 
         public Player()
         {
-            
+            Id = Properties.Settings.Default.IdPlayerNumber++;
+            Properties.Settings.Default.Save();
         }
     }
 }

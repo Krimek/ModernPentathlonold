@@ -10,14 +10,9 @@ namespace ModernPentathlon.Code
     {
         static List<Player> ListOfPlayer = new List<Player>();
 
-        static void EditPlayer(int Id)
+        static void EditPlayer(Player player)
         {
-
-        }
-        
-        static void EditPlayer(string name, string surname)
-        {
-
+            
         }
 
         static void RemovePlayer(int id)
