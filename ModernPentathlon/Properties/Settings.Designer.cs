@@ -34,5 +34,29 @@ namespace ModernPentathlon.Properties {
                 this["IdPlayerNumber"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Shoot {
+            get {
+                return ((bool)(this["Shoot"]));
+            }
+            set {
+                this["Shoot"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NewRules {
+            get {
+                return ((bool)(this["NewRules"]));
+            }
+            set {
+                this["NewRules"] = value;
+            }
+        }
     }
 }

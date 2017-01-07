@@ -12,8 +12,9 @@ namespace ModernPentathlon.Code
         string name;
         string surname;
         DateTime dateBirth;
-        enum Sex { K, M};
+        string sex;
         string club;
+        Competion score;
 
         public int Id
         {
@@ -48,6 +49,20 @@ namespace ModernPentathlon.Code
                 surname = value;
             }
         }
+        public string Sex
+        {
+            get
+            {
+                return sex;
+            }
+            set
+            {
+                if (value.Equals("kobieta") || value.Equals("Kobieta") || value.Equals("K") || value.Equals("k") || value.Equals("W") || value.Equals("women") || value.Equals("Women") || value.Equals("w"))
+                    sex = "K";
+                else if (value.Equals("mężczyzna") || value.Equals("Mężczyzna") || value.Equals("M") || value.Equals("m") || value.Equals("Mezczyzna") || value.Equals("mezczyzna") || value.Equals("Men") || value.Equals("men"))
+                    sex = "M";
+            }
+        }
         public DateTime DateBirth
         {
             get
@@ -71,10 +86,23 @@ namespace ModernPentathlon.Code
             }
         }
 
-        public Player()
+        public Player(bool isTemporary)
         {
-            Id = Properties.Settings.Default.IdPlayerNumber++;
-            Properties.Settings.Default.Save();
+            if (isTemporary)
+            {
+                Id = Properties.Settings.Default.IdPlayerNumber++;
+                score = new Competion();
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        public void Clone(Player p)
+        {
+            Name = p.Name;
+            Surname = p.Surname;
+            DateBirth = p.DateBirth;
+            Sex = p.Sex;
+            Club = p.Club;
         }
     }
 }

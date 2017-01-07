@@ -12,28 +12,50 @@ namespace ModernPentathlon.Code
 
         static void EditPlayer(Player player)
         {
+            int id = player.Id;
+            foreach (Player p in ListOfPlayer)
+            {
+                if (p.Id == id)
+                {
+                    p.Clone(player);
+                    break;
+                }
+            }
             
         }
 
+        static void RemovePlayer(Player player)
+        {
+            ListOfPlayer.Remove(player);
+        }
         static void RemovePlayer(int id)
         {
-            
+            int position = 0;
+            foreach(Player p in ListOfPlayer)
+            {
+                if (p.Id == id)
+                {
+                    ListOfPlayer.RemoveAt(position);
+                    break;
+                }
+                position++;
+            }
         }
-        static void RemovePlayer(string name, string surname)
-        {
 
+        static List<Player> GetListMen()
+        {
+            IEnumerable<Player> m = from Player p in ListOfPlayer
+                                    where p.Sex == "m"
+                                    select p;
+            return m.ToList();
         }
 
-        static List<Player> GetMen()
+        static List<Player> GetListWomen()
         {
-            List<Player> men = new List<Player>();
-            return men;
-        }
-
-        static List<Player> GetWomen()
-        {
-            List<Player> women = new List<Player>();
-            return women;
+            IEnumerable<Player> w = from Player p in ListOfPlayer
+                                    where p.Sex == "w"
+                                    select p;
+            return w.ToList();
         }
     }
 }

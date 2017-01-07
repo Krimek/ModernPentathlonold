@@ -58,6 +58,7 @@
     <Compile Include="Code\Competion.cs" />
     <Compile Include="Code\StructPlayers.cs" />
     <Compile Include="Code\Player.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Windows\NewCompetition\NewCompetition.xaml.cs">
       <DependentUpon>NewCompetition.xaml</DependentUpon>
     </Compile>
