@@ -8,13 +8,18 @@ namespace ModernPentathlon.Code
 {
     class Player
     {
+        public enum Discipline {Swimming, Running, Shooting, CombinedEvent};
         int id;
         string name;
         string surname;
         DateTime dateBirth;
         string sex;
         string club;
-        Competion score;
+        Swimming swimming;
+        Running running;
+        Shooting shooting;
+        CombinedEvent combinedEvent;
+        int totalScore;
 
         public int Id
         {
@@ -88,11 +93,14 @@ namespace ModernPentathlon.Code
 
         public Player(bool isTemporary)
         {
-            if (isTemporary)
+            if (!isTemporary)
             {
                 Id = Properties.Settings.Default.IdPlayerNumber++;
-                score = new Competion();
                 Properties.Settings.Default.Save();
+                combinedEvent = new CombinedEvent();
+                shooting = new Shooting();
+                swimming = new Swimming();
+                running = new Running();
             }
         }
 
@@ -103,6 +111,46 @@ namespace ModernPentathlon.Code
             DateBirth = p.DateBirth;
             Sex = p.Sex;
             Club = p.Club;
+        }
+
+        public void AddScore(Discipline discipline, string timeOrScore, string penalty)
+        {
+            int penalties;
+            if (discipline == Discipline.Shooting)
+            {
+                if (Int32.TryParse(timeOrScore, out int result) && Int32.TryParse(penalty, out penalties))
+                {
+                    shooting.CalculateResult(result, penalties);
+                }
+            }
+            else
+            {
+                if(Int32.TryParse(timeOrScore.Substring(0,2), out int minute) && 
+                    Int32.TryParse(timeOrScore.Substring(3,2),out int second) && 
+                    Int32.TryParse(timeOrScore.Substring(6,2), out int millisecond) && 
+                    Int32.TryParse(penalty, out penalties))
+                {
+                    TimeSpan time = new TimeSpan(0, 0, minute, second, millisecond);
+                    if(discipline == Discipline.Running)
+                    {
+                        running.CalculateResult(time, penalties);
+                    }
+                    else if(discipline == Discipline.Swimming)
+                    {
+                        swimming.CalculateResult(time, penalties);
+                    }
+                    else if(discipline == Discipline.CombinedEvent)
+                    {
+                        combinedEvent.CalculateResult(time, penalties);
+                    }
+                }
+            }
+            UpdateTotalScore();
+        }
+
+        private void UpdateTotalScore()
+        {
+            totalScore = swimming.CompetitionScore + running.CompetitionScore + shooting.CompetitionScore + combinedEvent.CompetitionScore;
         }
     }
 }
