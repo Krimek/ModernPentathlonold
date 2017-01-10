@@ -58,5 +58,64 @@ namespace ModernPentathlon.Properties {
                 this["NewRules"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NameCompetition {
+            get {
+                return ((string)(this["NameCompetition"]));
+            }
+            set {
+                this["NameCompetition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PlaceCompetition {
+            get {
+                return ((string)(this["PlaceCompetition"]));
+            }
+            set {
+                this["PlaceCompetition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime DateOfCompetition {
+            get {
+                return ((global::System.DateTime)(this["DateOfCompetition"]));
+            }
+            set {
+                this["DateOfCompetition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NumberOfLineOnPool {
+            get {
+                return ((int)(this["NumberOfLineOnPool"]));
+            }
+            set {
+                this["NumberOfLineOnPool"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NumberOfPlaceShoot {
+            get {
+                return ((int)(this["NumberOfPlaceShoot"]));
+            }
+            set {
+                this["NumberOfPlaceShoot"] = value;
+            }
+        }
     }
 }

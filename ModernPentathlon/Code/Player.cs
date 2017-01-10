@@ -104,6 +104,11 @@ namespace ModernPentathlon.Code
             }
         }
 
+        public override string ToString()
+        {
+            return Name + Surname + DateBirth.ToString() + "\"" + Club + "\"" + Sex + swimming.ToString() + running.ToString() + shooting.ToString() + combinedEvent.ToString() + totalScore;
+        }
+
         public void Clone(Player p)
         {
             Name = p.Name;

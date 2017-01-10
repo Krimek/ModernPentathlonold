@@ -9,10 +9,7 @@ namespace ModernPentathlon.Code
     class Shooting : Competion
     {
         int score;
-        public Shooting()
-        {
-
-        }
+        public Shooting(){}
         protected override int ConvertTimeToScore()
         {
             return (int) score;
@@ -22,6 +19,11 @@ namespace ModernPentathlon.Code
             this.score = score;
             this.Penalty = penalty;
             CompetitionScore = score + penalty;
+        }
+
+        public override string ToString()
+        {
+            return score.ToString() + Penalty.ToString() + 
         }
     }
 }

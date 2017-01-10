@@ -58,6 +58,7 @@
     <Compile Include="Code\CombinedEvent.cs" />
     <Compile Include="Code\Competion.cs" />
     <Compile Include="Code\Running.cs" />
+    <Compile Include="Code\Save.cs" />
     <Compile Include="Code\Shooting.cs" />
     <Compile Include="Code\StructPlayers.cs" />
     <Compile Include="Code\Player.cs" />

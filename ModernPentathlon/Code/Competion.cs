@@ -17,10 +17,7 @@ namespace ModernPentathlon.Code
         public int Penalty { get => penalty; set => penalty = value; }
         public int CompetitionScore { get => competitionScore; set => competitionScore = value; }
 
-        public Competion()
-        {
-
-        }
+        public Competion(){}
 
         abstract protected int ConvertTimeToScore();
 
@@ -30,6 +27,11 @@ namespace ModernPentathlon.Code
             Penalty = penalty;
             CompetitionScore = ConvertTimeToScore() + penalty;
             finish = true; 
+        }
+
+        public override string ToString()
+        {
+            return time.ToString() + Penalty.ToString() + CompetitionScore.ToString() + finish.ToString();
         }
 
     }

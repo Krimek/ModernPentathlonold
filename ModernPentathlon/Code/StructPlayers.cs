@@ -8,27 +8,26 @@ namespace ModernPentathlon.Code
 {
     static class StructPlayers
     {
-        static List<Player> ListOfPlayer = new List<Player>();
+        public static List<Player> ListOfPlayer = new List<Player>();
 
-        static void EditPlayer(Player player)
+        public static void EditPlayer(Player player)
         {
-            int id = player.Id;
             foreach (Player p in ListOfPlayer)
             {
-                if (p.Id == id)
+                if (p.Id == player.Id)
                 {
                     p.Clone(player);
                     break;
                 }
             }
-            
         }
 
-        static void RemovePlayer(Player player)
+        public static void RemovePlayer(Player player)
         {
             ListOfPlayer.Remove(player);
         }
-        static void RemovePlayer(int id)
+
+        public static void RemovePlayer(int id)
         {
             int position = 0;
             foreach(Player p in ListOfPlayer)
@@ -42,7 +41,7 @@ namespace ModernPentathlon.Code
             }
         }
 
-        static List<Player> GetListMen()
+        public static List<Player> GetListMen()
         {
             IEnumerable<Player> m = from Player p in ListOfPlayer
                                     where p.Sex == "m"
@@ -50,7 +49,7 @@ namespace ModernPentathlon.Code
             return m.ToList();
         }
 
-        static List<Player> GetListWomen()
+        public static List<Player> GetListWomen()
         {
             IEnumerable<Player> w = from Player p in ListOfPlayer
                                     where p.Sex == "w"
