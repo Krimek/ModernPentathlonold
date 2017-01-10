@@ -14,7 +14,7 @@ namespace ModernPentathlon.Code
         {
             foreach (Player p in ListOfPlayer)
             {
-                if (p.Id == player.Id)
+                if (p.Equals(player))
                 {
                     p.Clone(player);
                     break;

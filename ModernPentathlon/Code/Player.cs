@@ -109,6 +109,13 @@ namespace ModernPentathlon.Code
             return Name + Surname + DateBirth.ToString() + "\"" + Club + "\"" + Sex + swimming.ToString() + running.ToString() + shooting.ToString() + combinedEvent.ToString() + totalScore;
         }
 
+        public bool Equals(Player p)
+        {
+            if (p.id == Id)
+                return true;
+            return false;
+        }
+
         public void Clone(Player p)
         {
             Name = p.Name;

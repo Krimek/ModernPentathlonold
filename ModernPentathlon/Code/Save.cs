@@ -23,8 +23,8 @@ namespace ModernPentathlon.Code
                 {
                     sw.WriteLine(p.ToString());
                 }
+                return true;
             }
-            return true;
         }
     }
 }
