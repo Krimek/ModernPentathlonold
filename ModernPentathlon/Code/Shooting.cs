@@ -23,7 +23,7 @@ namespace ModernPentathlon.Code
 
         public override string ToString()
         {
-            return score.ToString() + Penalty.ToString() + 
+            return score.ToString() + Penalty.ToString() + CompetitionScore + finish; 
         }
     }
 }
