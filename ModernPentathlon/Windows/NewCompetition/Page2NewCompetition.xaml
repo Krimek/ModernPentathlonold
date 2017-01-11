@@ -5,13 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ModernPentathlon.Windows.NewCompetition"
       mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="400"
+      d:DesignHeight="500" d:DesignWidth="500"
       Title="Page2NewCompetition">
 
-    <Grid>
-        <Button x:Name="NextButton" Content="Dalej" Margin="0,0,30,20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="NextButton_Click"/>
-        <Button x:Name="CancelButton" Content="Anuluj" HorizontalAlignment="Right" Margin="0,0,220,20" VerticalAlignment="Bottom" Width="75"/>
-        <Button x:Name="PreviewButton" Content="Wstecz" HorizontalAlignment="Right" Margin="0,0,125,20" VerticalAlignment="Bottom" Width="75" Click="PreviewButton_Click"/>
-
+    <Grid Background="White">
+        <Label x:Name="label1" Content="Podaj informacje zaawansowane" HorizontalAlignment="Left" Margin="117,22,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Ilość torów na basenie:" HorizontalAlignment="Left" Margin="33,77,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Ilość stanowsk strzeleckich:" HorizontalAlignment="Left" Margin="33,108,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="numberLineSwim_textBox" HorizontalAlignment="Left" Height="23" Margin="245,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="numberShootPlace_textBox" HorizontalAlignment="Left" Height="23" Margin="245,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+        <Button x:Name="NextButton" Content="Dalej" Margin="0,0,30,30" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="NextButton_Click"/>
+        <Button x:Name="PreviewButton" Content="Wstecz" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="75" Click="PreviewButton_Click"/>
     </Grid>
 </Page>

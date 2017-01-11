@@ -85,9 +85,10 @@ namespace ModernPentathlon.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime DateOfCompetition {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DateOfCompetition {
             get {
-                return ((global::System.DateTime)(this["DateOfCompetition"]));
+                return ((string)(this["DateOfCompetition"]));
             }
             set {
                 this["DateOfCompetition"] = value;
@@ -115,6 +116,18 @@ namespace ModernPentathlon.Properties {
             }
             set {
                 this["NumberOfPlaceShoot"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Organizer {
+            get {
+                return ((string)(this["Organizer"]));
+            }
+            set {
+                this["Organizer"] = value;
             }
         }
     }

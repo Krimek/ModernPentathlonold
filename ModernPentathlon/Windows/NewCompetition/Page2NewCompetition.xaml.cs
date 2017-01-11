@@ -20,26 +20,29 @@ namespace ModernPentathlon.Windows.NewCompetition
     /// </summary>
     public partial class Page2NewCompetition : Page
     {
-        Page1NewCompetition p1;
-        Page3NewCompetition p3;
+        private NewCompetition nC;
 
         public Page2NewCompetition()
         {
             InitializeComponent();
         }
 
+        public void Init(NewCompetition nC)
+        {
+            this.nC = nC;
+        }
+
         private void PreviewButton_Click(object sender, RoutedEventArgs e)
         {
-            if (p1 == null)
-                p1 = new Page1NewCompetition();
-            NavigationService.Navigate(p1);
+            nC.Show1Page();
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            if (p3 == null)
-                p3 = new Page3NewCompetition();
-            NavigationService.Navigate(p3);
+            nC.swimLine = numberLineSwim_textBox.Text;
+            nC.shootPlace = numberShootPlace_textBox.Text;
+            nC.Show3Page();
         }
+        
     }
 }

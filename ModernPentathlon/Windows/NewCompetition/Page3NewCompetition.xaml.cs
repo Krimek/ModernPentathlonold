@@ -20,9 +20,26 @@ namespace ModernPentathlon.Windows.NewCompetition
     /// </summary>
     public partial class Page3NewCompetition : Page
     {
+        private NewCompetition nC;
+
         public Page3NewCompetition()
         {
             InitializeComponent();
+        }
+
+        internal void Init(NewCompetition nC)
+        {
+            this.nC = nC;
+        }
+
+        private void FinishButton_Click(object sender, RoutedEventArgs e)
+        {
+            nC.FinishCreate();
+        }
+
+        private void PreviewButton_Click(object sender, RoutedEventArgs e)
+        {
+            nC.Show2Page();
         }
     }
 }

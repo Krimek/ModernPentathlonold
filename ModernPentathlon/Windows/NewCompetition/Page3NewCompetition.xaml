@@ -5,8 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ModernPentathlon.Windows.NewCompetition"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="500" d:DesignWidth="500"
       Title="Page3NewCompetition">
 
-    <Grid/>
+    <Grid Background="#FFC1FFAA">
+        <Button x:Name="NextButton" Content="Zakończ" Margin="0,0,30,30" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="FinishButton_Click"/>
+        <Button x:Name="PreviewButton" Content="Wstecz" HorizontalAlignment="Right" Margin="0,0,125,30" VerticalAlignment="Bottom" Width="75" Click="PreviewButton_Click"/>
+        <Label x:Name="label" Content="Podsumowanie" HorizontalAlignment="Left" Margin="109,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Nazwa zawodów:" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Miejsce zawodów:" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Data zawodów:" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Typ zawodów:" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="Ilość torów na basenie:" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Content="Ilość stanowisk strzeleckich:" HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="nameCompetition_Label" Content="" HorizontalAlignment="Left" Margin="161,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="placeCompetition_Label" HorizontalAlignment="Left" Margin="165,80,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="dateCompetition_Label" Content="" Margin="165,110,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="typeCompetition_Label" Content="" Margin="165,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="numberLineSwim_Label" Content="" Margin="165,170,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="shootPlace_Label" Content="" Margin="165,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+
+    </Grid>
 </Page>
