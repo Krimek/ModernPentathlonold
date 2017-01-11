@@ -21,6 +21,26 @@ namespace ModernPentathlon.Code
                 }
             }
         }
+        
+        public static Player GetPlayer(int id)
+        {
+            foreach (Player p in ListOfPlayer)
+            {
+                if (p.Equals(id))
+                    return p;
+            }
+            return null;
+        }
+
+        public static Player GetPlayer(string name, string surname)
+        {
+            foreach(Player p in ListOfPlayer)
+            {
+                if (p.Equals(name, surname))
+                    return p;
+            }
+            return null;
+        }
 
         public static void RemovePlayer(Player player)
         {
@@ -29,16 +49,12 @@ namespace ModernPentathlon.Code
 
         public static void RemovePlayer(int id)
         {
-            int position = 0;
-            foreach(Player p in ListOfPlayer)
-            {
-                if (p.Id == id)
-                {
-                    ListOfPlayer.RemoveAt(position);
-                    break;
-                }
-                position++;
-            }
+            RemovePlayer(GetPlayer(id));
+        }
+
+        public static void RemovePlayer(string name, string surname)
+        {
+            RemovePlayer(GetPlayer(name, surname));
         }
 
         public static List<Player> GetListMen()
@@ -55,6 +71,30 @@ namespace ModernPentathlon.Code
                                     where p.Sex == "w"
                                     select p;
             return w.ToList();
+        }
+
+        public static List<string> GetSortNameAndSurnameMen()
+        {
+            IEnumerable<string> m = from Player p in GetListMen()
+                                    orderby p.Name
+                                    select p.Name + " " + p.Surname;
+            return m.ToList();
+        }
+
+        public static List<string> GetSortNameAndSurnameWomen()
+        {
+            IEnumerable<string> m = from Player p in GetListWomen()
+                                    orderby p.Name
+                                    select p.Name + " " + p.Surname;
+            return m.ToList();
+        }
+
+        public static List<string> GetSortNameAndSurnameAll()
+        {
+            IEnumerable<string> m = from Player p in ListOfPlayer
+                                    orderby p.Name
+                                    select p.Name + " " + p.Surname;
+            return m.ToList();
         }
     }
 }

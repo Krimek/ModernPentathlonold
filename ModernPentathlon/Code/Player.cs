@@ -116,6 +116,13 @@ namespace ModernPentathlon.Code
             return false;
         }
 
+        public bool Equals(string name, string surname)
+        {
+            if (name == Name && surname == Surname)
+                return true;
+            return false;
+        }
+
         public void Clone(Player p)
         {
             Name = p.Name;

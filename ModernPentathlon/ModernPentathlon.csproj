@@ -64,6 +64,9 @@
     <Compile Include="Code\Player.cs" />
     <Compile Include="Code\Swimming.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Windows\AddPlayer\AddPlayer.xaml.cs">
+      <DependentUpon>AddPlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\NewCompetition\NewCompetition.xaml.cs">
       <DependentUpon>NewCompetition.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,10 @@
     <Compile Include="Windows\NewCompetition\Page3NewCompetition.xaml.cs">
       <DependentUpon>Page3NewCompetition.xaml</DependentUpon>
     </Compile>
+    <Page Include="Windows\AddPlayer\AddPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MainWindow\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
