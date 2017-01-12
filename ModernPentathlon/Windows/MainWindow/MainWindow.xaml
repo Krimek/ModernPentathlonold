@@ -17,7 +17,7 @@
         <Grid Margin="0,70,500,0" HorizontalAlignment="Center" Width="500">
             <Label x:Name="label" Content="Lista uczestników:" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
             <Label x:Name="label1" Content="Wybierz kategorie:" HorizontalAlignment="Center" Margin="0,50,140,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="choosePlayerList_comboBox" HorizontalAlignment="Center" Margin="140,50,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="2" SelectionChanged="ChoosePlayerListComboBox_SelectionChanged">
+            <ComboBox x:Name="choosePlayerList_comboBox" HorizontalAlignment="Center" Margin="140,50,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="-1" SelectionChanged="ChoosePlayerListComboBox_SelectionChanged">
                 <ComboBoxItem Content="Mężczyźni"/>
                 <ComboBoxItem Content="Kobiety"/>
                 <ComboBoxItem Content="Wszyscy"/>

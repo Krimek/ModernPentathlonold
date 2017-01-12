@@ -19,9 +19,43 @@ namespace ModernPentathlon.Windows.AddPlayer
     /// </summary>
     public partial class AddPlayer : Window
     {
+        private string startTimeSwim;
+        public bool cancelAddPlayer;
+        private string name;
+        private string surname;
+        private string club;
+        private string sex;
+        private DateTime dateBirth;
+
+        public string NamePlayer { get => name; set => name = value; }
+        public string Surname { get => surname; set => surname = value; }
+        public string Club { get => club; set => club = value; }
+        public string Sex { get => sex; set => sex = value; }
+        public DateTime DateBirth { get => dateBirth; set => dateBirth = value; }
+        public string StartTimeSwim { get => startTimeSwim; set => startTimeSwim = value; }
+
         public AddPlayer()
         {
             InitializeComponent();
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            cancelAddPlayer = true;
+            Close();
+        }
+
+        private void Applybutton_Click(object sender, RoutedEventArgs e)
+        {
+            Name = name_textBox.Text;
+            Surname = surname_textBox.Text;
+            Club = club_textBox.Text;
+            Sex = sex_comboBox.Text;
+            startTimeSwim = swimTime_textBox.Text;
+            DateBirth = new DateTime(Convert.ToInt32(birthDate_datePicker.Text.Substring(6, 4)), 
+                Convert.ToInt32(birthDate_datePicker.Text.Substring(3, 2)), 
+                Convert.ToInt32(birthDate_datePicker.Text.Substring(0, 2)));
+            Close();
         }
     }
 }

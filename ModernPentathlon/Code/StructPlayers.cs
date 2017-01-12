@@ -10,7 +10,7 @@ namespace ModernPentathlon.Code
     {
         public static List<Player> ListOfPlayer = new List<Player>();
 
-        public static void EditPlayer(Player player)
+        public static void EditPlayer(int id, Player player)
         {
             foreach (Player p in ListOfPlayer)
             {
@@ -76,24 +76,24 @@ namespace ModernPentathlon.Code
         public static List<string> GetSortNameAndSurnameMen()
         {
             IEnumerable<string> m = from Player p in GetListMen()
-                                    orderby p.Name
-                                    select p.Name + " " + p.Surname;
+                                    orderby p.Surname
+                                    select p.Surname + " " + p.Name;
             return m.ToList();
         }
 
         public static List<string> GetSortNameAndSurnameWomen()
         {
             IEnumerable<string> m = from Player p in GetListWomen()
-                                    orderby p.Name
-                                    select p.Name + " " + p.Surname;
+                                    orderby p.Surname
+                                    select p.Surname + " " + p.Name;
             return m.ToList();
         }
 
         public static List<string> GetSortNameAndSurnameAll()
         {
             IEnumerable<string> m = from Player p in ListOfPlayer
-                                    orderby p.Name
-                                    select p.Name + " " + p.Surname;
+                                    orderby p.Surname
+                                    select p.Surname + " " + p.Name;
             return m.ToList();
         }
     }

@@ -50,13 +50,19 @@ namespace ModernPentathlon
             }
         }
 
-        /*************************************************ZDARZENIA**************************************************************/
+        /*************************************************EVENT**************************************************************/
 
         private void AddPlayerButton_Click(object sender, RoutedEventArgs e)
         {
             Windows.AddPlayer.AddPlayer addplayer = new Windows.AddPlayer.AddPlayer();
             addplayer.ShowDialog();
-
+            if (!addplayer.cancelAddPlayer)
+            {
+                Player p = new Player(true) { Name = addplayer.NamePlayer, Surname = addplayer.Surname, Club = addplayer.Club, DateBirth = addplayer.DateBirth, Sex = addplayer.Sex };
+                StructPlayers.ListOfPlayer.Add(new Player(false));
+                StructPlayers.EditPlayer(StructPlayers.ListOfPlayer.Last().Id, p);
+                RefreshPlayerList();
+            }
         }
 
         private void EditPlayerButton_Click(object sender, RoutedEventArgs e)
