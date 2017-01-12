@@ -12,14 +12,8 @@ namespace ModernPentathlon.Code
 
         public static void EditPlayer(int id, Player player)
         {
-            foreach (Player p in ListOfPlayer)
-            {
-                if (p.Equals(player))
-                {
-                    p.Clone(player);
-                    break;
-                }
-            }
+            Player p = GetPlayer(id);
+            p.Clone(player);
         }
         
         public static Player GetPlayer(int id)
@@ -60,7 +54,7 @@ namespace ModernPentathlon.Code
         public static List<Player> GetListMen()
         {
             IEnumerable<Player> m = from Player p in ListOfPlayer
-                                    where p.Sex == "m"
+                                    where p.Sex == "M"
                                     select p;
             return m.ToList();
         }
@@ -68,7 +62,7 @@ namespace ModernPentathlon.Code
         public static List<Player> GetListWomen()
         {
             IEnumerable<Player> w = from Player p in ListOfPlayer
-                                    where p.Sex == "w"
+                                    where p.Sex == "W"
                                     select p;
             return w.ToList();
         }
@@ -76,7 +70,7 @@ namespace ModernPentathlon.Code
         public static List<string> GetSortNameAndSurnameMen()
         {
             IEnumerable<string> m = from Player p in GetListMen()
-                                    orderby p.Surname
+                                    orderby p.Surname, p.Name
                                     select p.Surname + " " + p.Name;
             return m.ToList();
         }
@@ -84,7 +78,7 @@ namespace ModernPentathlon.Code
         public static List<string> GetSortNameAndSurnameWomen()
         {
             IEnumerable<string> m = from Player p in GetListWomen()
-                                    orderby p.Surname
+                                    orderby p.Surname, p.Name
                                     select p.Surname + " " + p.Name;
             return m.ToList();
         }
@@ -92,7 +86,7 @@ namespace ModernPentathlon.Code
         public static List<string> GetSortNameAndSurnameAll()
         {
             IEnumerable<string> m = from Player p in ListOfPlayer
-                                    orderby p.Surname
+                                    orderby p.Surname, p.Name
                                     select p.Surname + " " + p.Name;
             return m.ToList();
         }

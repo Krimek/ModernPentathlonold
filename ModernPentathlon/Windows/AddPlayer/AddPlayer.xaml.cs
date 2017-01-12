@@ -47,7 +47,7 @@ namespace ModernPentathlon.Windows.AddPlayer
 
         private void Applybutton_Click(object sender, RoutedEventArgs e)
         {
-            Name = name_textBox.Text;
+            NamePlayer = name_textBox.Text;
             Surname = surname_textBox.Text;
             Club = club_textBox.Text;
             Sex = sex_comboBox.Text;

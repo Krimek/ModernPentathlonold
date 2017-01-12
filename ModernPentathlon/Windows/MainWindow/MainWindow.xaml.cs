@@ -24,6 +24,8 @@ namespace ModernPentathlon
         public MainWindow()
         {
             InitializeComponent();
+            Properties.Settings.Default.IdPlayerNumber = 0;
+            Properties.Settings.Default.Save();
         }
 
         private void NewCompetitionMenuItem_Click(object sender, RoutedEventArgs e)
@@ -67,16 +69,21 @@ namespace ModernPentathlon
 
         private void EditPlayerButton_Click(object sender, RoutedEventArgs e)
         {
-            string[] s = playerList_listBox.SelectedItem.ToString().Split();
-            Player p = StructPlayers.GetPlayer(s[0], s[1]);
-            
+            if (playerList_listBox.SelectedIndex != -1)
+            {
+                string[] s = playerList_listBox.SelectedItem.ToString().Split();
+                Player p = StructPlayers.GetPlayer(s[0], s[1]);
+            }
         }
 
         private void DeletePlayerButton_Click(object sender, RoutedEventArgs e)
         {
-            string[] s = playerList_listBox.SelectedItem.ToString().Split();
-            StructPlayers.RemovePlayer(s[0], s[1]);
-            RefreshPlayerList();
+            if (playerList_listBox.SelectedIndex != -1)
+            {
+                string[] s = playerList_listBox.SelectedItem.ToString().Split();
+                StructPlayers.RemovePlayer(s[0], s[1]);
+                RefreshPlayerList();
+            }
         }
 
         private void ChoosePlayerListComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

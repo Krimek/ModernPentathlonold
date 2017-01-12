@@ -63,7 +63,7 @@ namespace ModernPentathlon.Code
             set
             {
                 if (value.Equals("kobieta") || value.Equals("Kobieta") || value.Equals("K") || value.Equals("k") || value.Equals("W") || value.Equals("women") || value.Equals("Women") || value.Equals("w"))
-                    sex = "K";
+                    sex = "W";
                 else if (value.Equals("mężczyzna") || value.Equals("Mężczyzna") || value.Equals("M") || value.Equals("m") || value.Equals("Mezczyzna") || value.Equals("mezczyzna") || value.Equals("Men") || value.Equals("men"))
                     sex = "M";
             }
@@ -119,6 +119,13 @@ namespace ModernPentathlon.Code
         public bool Equals(string name, string surname)
         {
             if (name == Name && surname == Surname)
+                return true;
+            return false;
+        }
+
+        public bool Equals(int id)
+        {
+            if (id == Id)
                 return true;
             return false;
         }
