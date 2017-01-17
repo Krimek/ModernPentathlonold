@@ -29,12 +29,6 @@ namespace ModernPentathlon
             choosePlayerList_comboBox.SelectedIndex = 2;
         }
 
-        private void NewCompetitionMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Windows.NewCompetition.NewCompetition newCompetition = new Windows.NewCompetition.NewCompetition();
-            newCompetition.ShowDialog();
-        }
-
         private void RefreshPlayerList()
         {
             List<string> playerList;
@@ -53,10 +47,7 @@ namespace ModernPentathlon
             }
         }
         
-
-        /*************************************************EVENT**************************************************************/
-
-        private void AddPlayerButton_Click(object sender, RoutedEventArgs e)
+        private void AddPlayer()
         {
             Windows.AddPlayer.AddPlayer addPlayer = new Windows.AddPlayer.AddPlayer();
             addPlayer.ShowDialog();
@@ -69,7 +60,7 @@ namespace ModernPentathlon
             }
         }
 
-        private void EditPlayerButton_Click(object sender, RoutedEventArgs e)
+        private void EditPlayer()
         {
             if (playerList_listBox.SelectedIndex != -1)
             {
@@ -88,6 +79,18 @@ namespace ModernPentathlon
             }
         }
 
+        /*************************************************EVENT**************************************************************/
+
+        private void AddPlayerButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddPlayer();
+        }
+
+        private void EditPlayerButton_Click(object sender, RoutedEventArgs e)
+        {
+            EditPlayer();   
+        }
+
         private void DeletePlayerButton_Click(object sender, RoutedEventArgs e)
         {
             if (playerList_listBox.SelectedIndex != -1)
@@ -101,6 +104,29 @@ namespace ModernPentathlon
         private void ChoosePlayerListComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             RefreshPlayerList();
+        }
+
+        private void PlayerListListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            EditPlayer();
+        }
+
+        /******************************************************MENU**********************************************************/
+        
+        private void NewCompetitionMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.NewCompetition.NewCompetition newCompetition = new Windows.NewCompetition.NewCompetition();
+            newCompetition.ShowDialog();
+        }
+
+        private void AddPlayerMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            AddPlayer();
+        }
+
+        private void CloseMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
