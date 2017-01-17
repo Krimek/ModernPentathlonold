@@ -39,6 +39,21 @@ namespace ModernPentathlon.Windows.AddPlayer
             InitializeComponent();
         }
 
+        public AddPlayer(Code.Player p)
+        {
+            string sex;
+            InitializeComponent();
+            name_textBox.Text = p.Name;
+            surname_textBox.Text = p.Surname;
+            club_textBox.Text = p.Club;
+            if (p.Sex == "M")
+                sex = "Mężczyzna";
+            else
+                sex = "Kobieta";
+            sex_comboBox.Text = sex;
+            birthDate_datePicker.Text = p.DateBirth.ToShortDateString();
+        }
+
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             cancelAddPlayer = true;

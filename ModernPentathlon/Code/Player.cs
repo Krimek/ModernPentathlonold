@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModernPentathlon.Code
 {
-    class Player
+    public class Player
     {
         public enum Discipline {Swimming, Running, Shooting, CombinedEvent};
         int id;
@@ -90,6 +90,7 @@ namespace ModernPentathlon.Code
                 club = value;
             }
         }
+        
 
         public Player(bool isTemporary)
         {

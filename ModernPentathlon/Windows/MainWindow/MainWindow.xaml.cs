@@ -26,6 +26,7 @@ namespace ModernPentathlon
             InitializeComponent();
             Properties.Settings.Default.IdPlayerNumber = 0;
             Properties.Settings.Default.Save();
+            choosePlayerList_comboBox.SelectedIndex = 2;
         }
 
         private void NewCompetitionMenuItem_Click(object sender, RoutedEventArgs e)
@@ -51,16 +52,17 @@ namespace ModernPentathlon
                 playerList_listBox.Items.Add(s);
             }
         }
+        
 
         /*************************************************EVENT**************************************************************/
 
         private void AddPlayerButton_Click(object sender, RoutedEventArgs e)
         {
-            Windows.AddPlayer.AddPlayer addplayer = new Windows.AddPlayer.AddPlayer();
-            addplayer.ShowDialog();
-            if (!addplayer.cancelAddPlayer)
+            Windows.AddPlayer.AddPlayer addPlayer = new Windows.AddPlayer.AddPlayer();
+            addPlayer.ShowDialog();
+            if (!addPlayer.cancelAddPlayer)
             {
-                Player p = new Player(true) { Name = addplayer.NamePlayer, Surname = addplayer.Surname, Club = addplayer.Club, DateBirth = addplayer.DateBirth, Sex = addplayer.Sex };
+                Player p = new Player(true) { Name = addPlayer.NamePlayer, Surname = addPlayer.Surname, Club = addPlayer.Club, DateBirth = addPlayer.DateBirth, Sex = addPlayer.Sex };
                 StructPlayers.ListOfPlayer.Add(new Player(false));
                 StructPlayers.EditPlayer(StructPlayers.ListOfPlayer.Last().Id, p);
                 RefreshPlayerList();
@@ -72,7 +74,17 @@ namespace ModernPentathlon
             if (playerList_listBox.SelectedIndex != -1)
             {
                 string[] s = playerList_listBox.SelectedItem.ToString().Split();
-                Player p = StructPlayers.GetPlayer(s[0], s[1]);
+                Player p = StructPlayers.GetPlayer(s[1], s[0]);
+                Windows.AddPlayer.AddPlayer addPlayer = new Windows.AddPlayer.AddPlayer(p);
+                addPlayer.ShowDialog();
+                if (!addPlayer.cancelAddPlayer)
+                {
+                    StructPlayers.RemovePlayer(p);
+                    Player player = new Player(true) { Name = addPlayer.NamePlayer, Surname = addPlayer.Surname, Club = addPlayer.Club, DateBirth = addPlayer.DateBirth, Sex = addPlayer.Sex };
+                    StructPlayers.ListOfPlayer.Add(new Player(false));
+                    StructPlayers.EditPlayer(StructPlayers.ListOfPlayer.Last().Id, player);
+                    RefreshPlayerList();
+                }
             }
         }
 
@@ -81,7 +93,7 @@ namespace ModernPentathlon
             if (playerList_listBox.SelectedIndex != -1)
             {
                 string[] s = playerList_listBox.SelectedItem.ToString().Split();
-                StructPlayers.RemovePlayer(s[0], s[1]);
+                StructPlayers.RemovePlayer(s[1], s[0]);
                 RefreshPlayerList();
             }
         }
