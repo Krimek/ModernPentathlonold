@@ -10,7 +10,35 @@
         <DockPanel>
             <Menu DockPanel.Dock="Top">
                 <MenuItem Name="FileMenuItem" Header="Plik">
-                    <MenuItem Name="NewCompetitionMenuItem" Header="Nowe zawody" Click="NewCompetitionMenuItem_Click"></MenuItem>
+                    <MenuItem Name="NewCompetitionMenuItem" Header="Nowe zawody" Click="NewCompetitionMenuItem_Click"/>
+                    <MenuItem Name="LoadCompetitionMenuItem" Header="Wczytaj zawody"/>
+                    <MenuItem Name="SaveCompetitionMenuItem" Header="Zapisz zawody"/>
+                    <MenuItem Name="SaveCompetitionAsMenuItem" Header="Zapisz zawody jako..."/>
+                    <Separator/>
+                    <MenuItem Name="CloseMenuItem" Header="Zakończ"/>
+                </MenuItem>
+                <MenuItem Name="PlayerMenuItem" Header="Zawodnicy">
+                    <MenuItem Name="AddPlayerMenuItem" Header="Dodaj zawodnika"/>
+                    <MenuItem Name="ManagePlayerMenuItem" Header="Zarządzaj zawodnikami"/>
+                    <MenuItem Name="ImportPlayerListMenuItem" Header="Importuj liste zawodników">
+                        <MenuItem Name="ImportFromTxtMenuItem" Header="Z pliku txt"/>
+                        <MenuItem Name="ImportFromExcelMenuItem" Header="Z programu Excel"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Name="CompetitionMenuItem" Header="Zawody">
+                    <MenuItem Name="AddScoresMenuItem" Header="Dodaj wyniki"/>
+                    <MenuItem Name="EditScoresMenuItem" Header="Edytuj wyniki"/>
+                    <MenuItem Name="ViewScoresMenuItem" Header="Wyświetl wyniki"/>
+                </MenuItem>
+                <MenuItem Name="StartListMenuItem" Header="Listy startowe">
+                    <MenuItem Name="SwimStartListMenuItem" Header="Pływanie"/>
+                    <MenuItem Name="RunStartListMenuItem" Header="Bieganie"/>
+                    <MenuItem Name="ShootStartListMenuItem" Header="Strzelanie"/>
+                    <MenuItem Name="CombinedEventStartListMenuItem" Header="Kombinacja"/>
+                </MenuItem>
+                <MenuItem Name="PrintMenuItem" Header="Drukuj">
+                    <MenuItem Name="PrintStartListMenuItem" Header="Listy startowe"/>
+                    <MenuItem Name="PrintScoresMenuItem" Header="Wyniki"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
