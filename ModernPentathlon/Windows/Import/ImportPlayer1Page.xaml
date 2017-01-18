@@ -1,0 +1,16 @@
+﻿<Page x:Class="ModernPentathlon.Windows.Import.ImportPlayer1Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ModernPentathlon.Windows.Import"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="ImportPlayer1Page">
+
+    <Grid Background="White">
+        <Label x:Name="label" Content="Kreator ten pomoże Ci &#xD;&#xA;w prosty sposób zaimportować &#xD;&#xA;zawodników zawodów.&#xD;&#xA;Aby kontynuować naciśnij dalej." HorizontalAlignment="Center" Margin="0,0,0,100" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="button" Content="Dalej" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="197,262,0,0"/>
+
+    </Grid>
+</Page>
